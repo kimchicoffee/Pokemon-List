@@ -1,16 +1,18 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="app">
   <head>
     <meta charset="utf-8">
     <title>JC's Pokemon List</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
   </head>
+  <body>
     <h1>JC's Pokemon List</h1>
     <section ng-init="pokemons=[{name:'sujin', count:'1', zipcode:'02476'}]">
       <ul>
         <li ng-repeat="pokemon in pokemons">Name:{{pokemon.name}}, Count:{{pokemon.count}}, Zipcode:{{pokemon.zipcode}}</li>
       </ul>
     </section>
-  <body>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

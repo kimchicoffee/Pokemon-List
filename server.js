@@ -2,10 +2,12 @@ var express = require('express');
 
 var app = express();
 var port = process.env.PORT || 3000;
-;
+var path = require('path');
+
+app.use(express.static('client'));
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile('index.html');
 });
 
 app.listen(port, function (err) {
