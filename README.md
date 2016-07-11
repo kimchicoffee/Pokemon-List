@@ -1,7 +1,9 @@
 # JC The King of Pokemon masters#
 
 ## Summary ##
-  > It's for the people who's interested in JC's pokemon collection list. The app would display a list with JC's each pokemon's name, numbers, locations
+  > It's for the people who's interested in JC's pokemon collection list. The page would display a list with JC's each pokemon's names, numbers, zipcodes where they are found.
+## Solution ##
+  > It uese Angular.js, Express.js
 
 <!--
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
