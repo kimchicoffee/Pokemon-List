@@ -1,13 +1,7 @@
 # JC The King of Pokemon masters#
 
-## JC's pokemon collection list. ##
-
-
-## It's for the people who's interested in JC's pokemon collection list ##
-
-
 ## Summary ##
-  > The app would display a list with JC's each pokemon's name, numbers, locations
+  > It's for the people who's interested in JC's pokemon collection list. The app would display a list with JC's each pokemon's name, numbers, locations
 
 <!--
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
