@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "It's for the people who's interested in JC's pokemon collection list. The app would display a list with JC's each pokemon's name, numbers, locations",
   "main": "index.js",
+  "engines": {
+    "node": "4.1.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
