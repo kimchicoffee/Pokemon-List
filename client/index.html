@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title>JC's Pokemon List</title>
   </head>
-  <body>
+  <body ng-controller="MainController">
     <h1>JC's Pokemon List</h1>
-    <section ng-init="pokemons=[{name:'sujin', count:'1', zipcode:'02476'}]">
+    <section>
       <ul>
         <li ng-repeat="pokemon in pokemons">Name:{{pokemon.name}}, Count:{{pokemon.count}}, Zipcode:{{pokemon.zipcode}}</li>
       </ul>
