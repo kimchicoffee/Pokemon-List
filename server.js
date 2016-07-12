@@ -1,8 +1,11 @@
 var express = require('express');
 
 var app = express();
+var mongoose = require('mongoose');
 var port = process.env.PORT || 3000;
 var path = require('path');
+
+mongoose.connect('mongodb://localhost/masters');
 
 app.use(express.static('client'));
 

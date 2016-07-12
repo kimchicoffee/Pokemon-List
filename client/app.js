@@ -1,4 +1,4 @@
-angular.module('app', [])
+angular.module('app', []) // register firebase as a module in application
 .controller('MainController', function ($scope, Pokemons) {
   $scope.pokemons = Pokemons.pokemons;
   $scope.addPokemon = function () {
@@ -12,4 +12,4 @@ angular.module('app', [])
   return {pokemons : pokemons,
     addPokemon : addPokemon
   }
-});
+})
