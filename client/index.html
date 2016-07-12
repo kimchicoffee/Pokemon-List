@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Pokemon List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
   </head>
   <body ng-controller="MainController">
     <h1>Pokemon List</h1>
@@ -11,7 +12,7 @@
       </form>
     <section>
       <ul>
-        <li ng-repeat="pokemon in pokemons">Name:{{pokemon.name}} </li>
+        <li ng-repeat="pokemon in pokemons">Name:{{pokemon.name}} <i class="fa fa-trash-o" aria-hidden="true" ng-click="removePokemon(pokemons, $index)"></i></li>
       </ul>
     </section>
 

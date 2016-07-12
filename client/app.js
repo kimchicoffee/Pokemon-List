@@ -14,13 +14,21 @@ angular.module('app', [])
     });
   };
 
+  $scope.removePokemon = function (pokemons,index) {
+    var deletedPokemon = pokemons.splice(index,1);
+    PokemonsFactory.removePokemon(deletedPokemon[0])
+    .then(function () {
+      getAll();
+    });
+  }
+
   getAll();
 
 }).factory('PokemonsFactory', function ($http) {
   var getAll = function() {
     return $http({
       method: 'GET',
-      url: '/api/pokemon'
+      url: '/api/pokemons'
     })
     .then(function (resp) {
       return resp.data;
@@ -30,7 +38,7 @@ angular.module('app', [])
   var addPokemon = function (pokemon) {
     return $http({
       method: 'POST',
-      url: '/api/pokemon',
+      url: '/api/pokemons',
       data: pokemon
     })
     .then(function (resp) {
@@ -40,16 +48,18 @@ angular.module('app', [])
 
   var removePokemon = function (pokemon) {
     return $http({
-      method: 'DELETE',
-      url: '/api/pokemon',
+      method: 'POST',
+      url: '/api/pokemons/delete',
       data: pokemon
-    }).then(function (resp) {
+    })
+    .then(function (resp) {
       return resp;
     });
   };
 
   return {
+    getAll : getAll,
     addPokemon : addPokemon,
-    getAll: getAll
+    removePokemon : removePokemon
   }
 });

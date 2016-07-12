@@ -14,6 +14,7 @@ mongoose.connect(mongoUri);
 var Pokemon = require('./pokemonModel');
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('client'));
 
 app.get('/', function (req, res) {
@@ -22,16 +23,17 @@ app.get('/', function (req, res) {
 
 //api
 //app.use('/api',api);
-app.get('/api/pokemon', function (req, res) {
+app.get('/api/pokemons', function (req, res) {
   Pokemon.find({}, function(err, result) {
     res.json(result);
   })
 });
 
-app.post('/api/pokemon', function (req, res) {
+app.post('/api/pokemons', function (req, res) {
   Pokemon.findOne({name:req.body.name}, function(err, pokemon) {
     if (err) {
-      console.error('error', err);
+      console.error('error is', err);
+      res.sendStatus(404);
     }
     if (!pokemon) {
       Pokemon({ name: req.body.name }).save(function (err, result){
@@ -40,6 +42,18 @@ app.post('/api/pokemon', function (req, res) {
     }
   });
 });
+
+app.post('/api/pokemons/delete', function (req, res) {
+  Pokemon.remove({_id: req.body._id}, function(err) {
+    if (err) {
+      console.error('error is', err);
+      res.sendStatus(404);
+    } else {
+      res.sendStatus(204);
+    }
+  });
+});
+
 app.listen(port, function (err) {
   if (err) {
     throw err;
