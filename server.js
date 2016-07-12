@@ -28,10 +28,16 @@ app.get('/api/pokemon', function (req, res) {
 });
 
 app.post('/api/pokemon', function (req, res) {
-  Pokemon({name: req.body.name}).save(function(err, result){
-    res.sendStatus(201);
+  Pokemon.findOne({name:req.body.name}, function(err, found) {
+    console.log(found);
+    if(!found) {
+      Pokemon({name: req.body.name}).save(function(err, result){
+      res.sendStatus(201);
+      });
+    }else{
+      res.sendStatus(200);
+    }
   });
-  // res.redirect('/api/pokemon');
 })
 
 app.listen(port, function (err) {

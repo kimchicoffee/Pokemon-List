@@ -6,8 +6,8 @@
   </head>
   <body ng-controller="MainController">
     <h1>Pokemon List</h1>
-      <form name="pokemonForm" ng-submit="addPokemon()">
-        <input type="text" ng-model="newPokemon.name" placeholder="Add your new pokemon's name here" required>
+      <form name="pokemonForm" ng-submit="addPokemon()" novalidate>
+        <input type="text" ng-model="newPokemon.name" placeholder="Add your new pokemon's name here" required ng-class="{'error':pokemonForm.$invalid && pokemonForm.$dirty}">
       </form>
     <section>
       <ul>
