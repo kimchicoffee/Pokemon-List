@@ -5,7 +5,8 @@ var mongoose = require('mongoose');
 var port = process.env.PORT || 3000;
 var path = require('path');
 
-mongoose.connect('mongodb://localhost/masters');
+var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017';
+mongoose.connect(mongoUri);
 
 app.use(express.static('client'));
 
