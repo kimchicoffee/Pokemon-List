@@ -21,6 +21,7 @@ app.get('/', function (req, res) {
 });
 
 //api
+//app.use('/api',api);
 app.get('/api/pokemon', function (req, res) {
   Pokemon.find({}, function(err, result) {
     res.json(result);
@@ -29,12 +30,16 @@ app.get('/api/pokemon', function (req, res) {
 
 app.post('/api/pokemon', function (req, res) {
   Pokemon.findOne({name:req.body.name}, function(err, found) {
-    console.log(found);
     if(!found) {
-      Pokemon({name: req.body.name}).save(function(err, result){
-      res.sendStatus(201);
+      Pokemon({ name: req.body.name, count: 1 }).save(function(err, result){
+        res.sendStatus(201);
       });
-    }else{
+    } else if (found){
+      // var newCount = req.body.count ++;
+      // Pokemon({ count: newCount }).update(function(err, result){
+      //   res.sendStatus(301);
+      // });
+    } else {
       res.sendStatus(200);
     }
   });
