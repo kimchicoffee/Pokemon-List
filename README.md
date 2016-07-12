@@ -1,7 +1,7 @@
 # JC The King of Pokemon masters#
 
 ## Summary ##
-  > It's for the people who's interested in JC's pokemon collection list. The page would display a list with JC's each pokemon's names, numbers, zipcodes where they are found.
+  > It's for the people who's interested in JC's pokemon collection list. The page would display a list with JC's each pokemon's names he collected so far. There is a input box you can add new pokemon's name to the list.
 ## Solution ##
   > It uese Angular.js, Express.js
 
