@@ -1,15 +1,40 @@
 angular.module('app', []) // register firebase as a module in application
-.controller('MainController', function ($scope, Pokemons) {
-  $scope.pokemons = Pokemons.pokemons;
-  $scope.addPokemon = function () {
-    Pokemons.addPokemon($scope.newPokemon);
+.controller('MainController', function ($scope, PokemonsFactory) {
+
+  PokemonsFactory.getAll()
+  .then(function(pokemons) {
+    $scope.pokemons = pokemons;
+  });
+
+  // $scope.addPokemon = function () {
+  //   PokemonsFactory.addPokemon($scope.newPokemon);
+  // }
+
+}).factory('PokemonsFactory', function ($http) {
+  //var pokemons = [{name:'sujin'}];
+  var getAll = function() {
+    return $http({
+      method: 'GET',
+      url: '/api/pokemon'
+    })
+    .then(function (resp) {
+      console.log(resp.data);
+      return resp.data;
+    });
   }
-}).factory('Pokemons', function($http) {
-  var pokemons = [{name:'sujin'}];
   var addPokemon = function (newPokemon) {
-    pokemons.push({ name: newPokemon});
+    return $http({
+      method: 'POST',
+      url: '/api/pokemon',
+      data: newPokemon
+    })
+    .then(function (resp) {
+      return resp;
+    });
   };
-  return {pokemons : pokemons,
-    addPokemon : addPokemon
+
+  return {
+    addPokemon : addPokemon,
+    getAll: getAll
   }
-})
+});

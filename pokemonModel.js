@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
-var pokemonScheman = new mongoose.Schema({
+var pokemonSchema = new mongoose.Schema({
   name: String
-})l
+});
 
-module.exports = mongoose.mode("Pokemon", pokemonScheman);
+module.exports = mongoose.model("Pokemon", pokemonSchema);
