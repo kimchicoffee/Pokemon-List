@@ -13,6 +13,7 @@ angular.module('app', [])
       getAll();
     });
   };
+
   getAll();
 
 }).factory('PokemonsFactory', function ($http) {
@@ -34,18 +35,18 @@ angular.module('app', [])
     })
     .then(function (resp) {
       return resp;
-    })
+    });
   };
 
-  // var removePokemon = function (pokemon) {
-  //   return $http({
-  //     method: 'DELETE',
-  //     url: '/api/pokemon',
-  //     data: pokemon
-  //   }).then(function (resp) {
-  //     return resp;
-  //   })
-  // }
+  var removePokemon = function (pokemon) {
+    return $http({
+      method: 'DELETE',
+      url: '/api/pokemon',
+      data: pokemon
+    }).then(function (resp) {
+      return resp;
+    });
+  };
 
   return {
     addPokemon : addPokemon,

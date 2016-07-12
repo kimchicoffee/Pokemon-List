@@ -29,22 +29,17 @@ app.get('/api/pokemon', function (req, res) {
 });
 
 app.post('/api/pokemon', function (req, res) {
-  Pokemon.findOne({name:req.body.name}, function(err, found) {
-    if(!found) {
-      Pokemon({ name: req.body.name, count: 1 }).save(function(err, result){
-        res.sendStatus(201);
+  Pokemon.findOne({name:req.body.name}, function(err, pokemon) {
+    if (err) {
+      console.error('error', err);
+    }
+    if (!pokemon) {
+      Pokemon({ name: req.body.name }).save(function (err, result){
+      res.sendStatus(201);
       });
-    } else if (found){
-      // var newCount = req.body.count ++;
-      // Pokemon({ count: newCount }).update(function(err, result){
-      //   res.sendStatus(301);
-      // });
-    } else {
-      res.sendStatus(200);
     }
   });
-})
-
+});
 app.listen(port, function (err) {
   if (err) {
     throw err;
