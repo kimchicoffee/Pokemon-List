@@ -1,7 +1,15 @@
 angular.module('app', [])
-.controller('MainController', function ($scope) {
-  $scope.pokemons = [{name:'sujin'}];
+.controller('MainController', function ($scope, Pokemons) {
+  $scope.pokemons = Pokemons.pokemons;
   $scope.addPokemon = function () {
-    $scope.pokemons.push({ name: $scope.newPokemon, })
+    Pokemons.addPokemon($scope.newPokemon);
   }
-})
+}).factory('Pokemons', function($http) {
+  var pokemons = [{name:'sujin'}];
+  var addPokemon = function (newPokemon) {
+    pokemons.push({ name: newPokemon});
+  };
+  return {pokemons : pokemons,
+    addPokemon : addPokemon
+  }
+});
