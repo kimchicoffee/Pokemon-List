@@ -3,13 +3,15 @@ var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 var path = require('path');
-var Pokemon = require('./pokemonModel');
+
 var bodyParser = require('body-parser');
 
 //required for deployment
 var port = process.env.PORT || 3000;
-var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost/pokemonList';
+var mongoUri = process.env.MONGODB_URI || 'mongodb://127.0.0.1/pokemonList';
 mongoose.connect(mongoUri);
+
+var Pokemon = require('./pokemonModel');
 
 app.use(bodyParser.json());
 app.use(express.static('client'));
@@ -18,25 +20,19 @@ app.get('/', function (req, res) {
   res.sendFile('index.html');
 });
 
-
-//dummy database
-var data = [{"name":'Honeybell'},{"name":"sujin"}];
 //api
 app.get('/api/pokemon', function (req, res) {
-  res.json(data);
-   // Pokemon.find({}, function(err, result) {
-   //  console.log(result)
-   //   res.send(200, result);
-   //   //return result
-   // })
+  Pokemon.find({}, function(err, result) {
+    res.json(result);
+  })
 });
 
 app.post('/api/pokemon', function (req, res) {
-  console.log('req b',req.body);
-  data.push(req.body);
-  console.log('data' , data)
-  res.send(201)
-});
+  Pokemon({name: req.body.name}).save(function(err, result){
+    res.sendStatus(201);
+  });
+  // res.redirect('/api/pokemon');
+})
 
 app.listen(port, function (err) {
   if (err) {
