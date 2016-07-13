@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Pokemon List</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
   </head>
   <body ng-controller="MainController">
@@ -12,9 +13,9 @@
       <form name="pokemonForm" ng-submit="addPokemon()" class="pokemon-form" novalidate>
         <input type="text" ng-model="newPokemon.name" placeholder="Add your new pokemon's name here" required ng-class="{'error':pokemonForm.$invalid && pokemonForm.$dirty}" class="pokemon-form-input">
       </form>
-      <section>
-        <ul>
-          <li ng-repeat="pokemon in pokemons">Name:{{pokemon.name}} <i class="fa fa-trash-o" aria-hidden="true" ng-click="removePokemon(pokemons, $index)"></i></li>
+      <section >
+        <ul class="pokemonList">
+          <li ng-repeat="pokemon in pokemons">Name : {{pokemon.name}} <i class="fa fa-trash-o" aria-hidden="true" ng-click="removePokemon(pokemons, $index)"></i></li>
         </ul>
     </section>
     </div>

@@ -412,19 +412,8 @@ h4, h5, h6 {
 }
 
 h1 {
+  font-family: 'Bangers', cursive;
   font-size: 38px;
-}
-
-h2 {
-  color: #fff;
-  font-size: 20px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-h3 {
-  font-size: 18px;
-  text-transform: uppercase;
 }
 
 .wrapper {
@@ -433,7 +422,7 @@ h3 {
 }
 
 .pokemon-form {
-  background-color: #9ecbd2;
+  background-color: #ff0000;
   border-radius: 10px;
   margin-bottom: 40px;
   padding: 20px;
@@ -449,4 +438,11 @@ h3 {
   width: 100%;
   outline: none;
   resize: none;
+}
+
+.pokemonList > li{
+  font-family: 'Bangers', cursive;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
