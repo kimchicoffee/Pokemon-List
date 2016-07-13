@@ -1,7 +1,7 @@
 # Pokemon lists#
 
 ## Summary ##
-  > It's for the people who wants to keep their pokemons in the list. You can add new pokemon in the collection through adding their name into the input box.
+  > It's for the people who wants to keep their pokemons in the list. You can add new pokemon in the collection through adding their name into the input box. Users can delete each itme by clicking trashcan icon.
 
 <!--
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
