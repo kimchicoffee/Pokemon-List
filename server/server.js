@@ -12,17 +12,12 @@ var port = process.env.PORT || 3001;
 var mongoUri = process.env.MONGODB_URI || 'mongodb://127.0.0.1/pokemonList';
 mongoose.connect(mongoUri);
 
-
 var Pokemon = require('./pokemonModel');
 var P = new Pokedex();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static('client'));
-
-app.get('/', function (req, res) {
-  res.sendFile('index.html');
-});
+app.use(express.static(__dirname + '/../client'));
 
 app.get('/api/pokemons', function (req, res) {
   Pokemon.find({}, function(err, result) {

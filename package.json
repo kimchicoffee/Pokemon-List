@@ -7,7 +7,8 @@
     "node": "4.1.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./server/server.js",
+    "test": "mocha test"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,6 @@
   "keywords": [
     "angular",
     "express",
-    "sql",
     "pokemon"
   ],
   "author": "Sujin Lee",
@@ -29,8 +29,12 @@
     "body-parser": "^1.15.2",
     "chai": "^3.5.0",
     "express": "^4.14.0",
+    "mocha": "^2.5.3",
     "mongoose": "^4.5.4",
     "nodemon": "^1.9.2",
     "pokedex-promise-v2": "^2.1.0"
+  },
+  "devDependencies": {
+    "supertest": "^1.2.0"
   }
 }
