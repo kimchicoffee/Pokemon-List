@@ -15,7 +15,7 @@
       </form>
       <section >
         <ul class="pokemonList">
-          <li ng-repeat="pokemon in pokemons">Name : {{pokemon.name}} <i class="fa fa-trash-o" aria-hidden="true" ng-click="removePokemon(pokemons, $index)"></i></li>
+          <li ng-repeat="pokemon in pokemons">Name : {{pokemon.name}} Weight : {{pokemon.weight}} Height: {{pokemon.height}}<i class="fa fa-trash-o" aria-hidden="true" ng-click="removePokemon(pokemons, $index)"></i></li>
         </ul>
     </section>
     </div>

@@ -1,7 +1,9 @@
 var mongoose = require('mongoose');
 
 var pokemonSchema = new mongoose.Schema({
-  name: String
+  name: String,
+  weight: Number,
+  height: Number
 });
 
 module.exports = mongoose.model("Pokemon", pokemonSchema);
