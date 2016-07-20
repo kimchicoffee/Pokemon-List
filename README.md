@@ -2,6 +2,10 @@
 
 ## Summary ##
   > It's for the people who wants to keep their pokemons in the list. You can add new pokemon in the collection through adding their name into the input box. Users can delete each itme by clicking trashcan icon.
+## Api ##
+  > https://pokeapi.co/docsv2/
+## Demo ##
+  > https://ancient-taiga-21584.herokuapp.com/
 
 <!--
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
