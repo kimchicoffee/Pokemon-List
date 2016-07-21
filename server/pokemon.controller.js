@@ -1,6 +1,6 @@
 var bluebird = require('bluebird');
 var Pokedex = require('pokedex-promise-v2');
-var Pokemon = require('./pokemon.model');
+var Pokemon = require('./pokemon.model.js');
 var P = new Pokedex();
 
 module.exports.getAll = function (req, res) {
