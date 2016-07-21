@@ -2,9 +2,9 @@ angular.module('app', ['ui.router'])
 .config(function($stateProvider, $urlRouterProvider, $httpProvider){
   $stateProvider
     .state('pokemon',{
-      url: '/pokemons',
+      url: '/pokemons/:name',
       templateUrl: 'pokemon.html',
-      controller: 'MainController'
+      controller: 'pokemonCtrl'
     });
   $urlRouterProvider
     .otherwise('/');
