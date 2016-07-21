@@ -1,4 +1,14 @@
-angular.module('app', [])
+angular.module('app', ['ui.router'])
+.config(function($stateProvider, $urlRouterProvider, $httpProvider){
+  $stateProvider
+    .state('pokemon',{
+      url: '/pokemons',
+      templateUrl: 'pokemon.html',
+      controller: 'MainController'
+    });
+  $urlRouterProvider
+    .otherwise('/');
+})
 .controller('MainController', function ($scope, PokemonsFactory) {
   var getAll = function () {
     PokemonsFactory.getAll()
