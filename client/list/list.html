@@ -1,3 +1,6 @@
+<form name="pokemonForm" ng-submit="addPokemon()" class="pokemon-form" novalidate>
+  <input type="text" ng-model="newPokemon.name" placeholder="Add your new pokemon's name here" required ng-class="{'error':pokemonForm.$invalid && pokemonForm.$dirty}" class="pokemon-form-input">
+</form>
 <ul class="pokemonList">
   <li ng-repeat="pokemon in pokemons"> <a ui-sref="pokemon({name:pokemon.name})">Name : {{pokemon.name}} Weight : {{pokemon.weight}} Height: {{pokemon.height}}</a> <i class="fa fa-trash-o" aria-hidden="true" ng-click="removePokemon(pokemons, $index)"></i></li>
 </ul>

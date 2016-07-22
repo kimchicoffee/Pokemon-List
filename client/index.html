@@ -10,11 +10,8 @@
   <body>
     <div class="wrapper">
       <h1><a ui-sref="list">Pokemon List</a></h1>
-      <form name="pokemonForm" ng-submit="addPokemon()" class="pokemon-form" novalidate>
-        <input type="text" ng-model="newPokemon.name" placeholder="Add your new pokemon's name here" required ng-class="{'error':pokemonForm.$invalid && pokemonForm.$dirty}" class="pokemon-form-input">
-      </form>
-    <section ui-view="">
-    </section>
+    <div ui-view="">
+    </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>

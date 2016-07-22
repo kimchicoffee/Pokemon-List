@@ -9,13 +9,21 @@ module.exports.getAll = function (req, res) {
   });
 };
 
+module.exports.getOnePokemon = function (req, res) {
+  var name = req.params.name;
+  Pokemon.findOne({name:name}, function(err, result) {
+    res.json(result);
+  });
+};
+
 module.exports.addPokemon = function (req, res) {
   var name = req.body.name;
   P.getPokemonByName(name)
   .then(function(pokemon) {
     Pokemon.findOne({name:name}, function(err, result) {
       if(!result) {
-        Pokemon({name:name, weight:pokemon.weight, height:pokemon.height}).save(function(err,result) {
+        console.log('pokemon ', pokemon)
+        Pokemon({name:name, weight:pokemon.weight, height:pokemon.height, image:pokemon.sprites.front_default}).save(function(err,result) {
           res.sendStatus(201);
         })
       }else{
