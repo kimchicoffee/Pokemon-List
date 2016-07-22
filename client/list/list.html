@@ -1,0 +1,3 @@
+<ul class="pokemonList">
+  <li ng-repeat="pokemon in pokemons"> <a ui-sref="pokemon({name:pokemon.name})">Name : {{pokemon.name}} Weight : {{pokemon.weight}} Height: {{pokemon.height}}</a> <i class="fa fa-trash-o" aria-hidden="true" ng-click="removePokemon(pokemons, $index)"></i></li>
+</ul>
