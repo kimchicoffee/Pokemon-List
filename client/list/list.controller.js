@@ -36,6 +36,7 @@ angular.module('app')
   };
 
   var addPokemon = function (pokemon) {
+    console.log('pokemon is', pokemon);
     return $http({
       method: 'POST',
       url: '/api/pokemons',
