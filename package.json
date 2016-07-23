@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node ./server/server.js",
-    "test": "mocha test"
+    "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
