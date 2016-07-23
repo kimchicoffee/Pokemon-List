@@ -1,4 +1,4 @@
-angular.module('app', ['ui.router','uiGmapgoogle-maps'])
+angular.module('app', ['ui.router'])
 .config(function($stateProvider, $urlRouterProvider, $httpProvider){
   $stateProvider
     .state('list',{
