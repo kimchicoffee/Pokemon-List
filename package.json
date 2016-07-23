@@ -28,14 +28,11 @@
   "dependencies": {
     "bluebird": "^3.4.1",
     "body-parser": "^1.15.2",
-    "chai": "^3.5.0",
+    "bower": "^1.7.9",
     "express": "^4.14.0",
-    "mocha": "^2.5.3",
     "mongoose": "^4.5.4",
     "nodemon": "^1.9.2",
     "pokedex-promise-v2": "^2.1.0"
   },
-  "devDependencies": {
-    "supertest": "^1.2.0"
-  }
+  "devDependencies": {}
 }
