@@ -1,0 +1,22 @@
+{
+  "name": "pokemon_list",
+  "authors": [
+    "Sujin Lee"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "angular",
+    "express",
+    "pokemon"
+  ],
+  "homepage": "https://github.com/pasdesujin/jc_pokemon_king",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/bower_components",
+    "test",
+    "tests"
+  ]
+}
