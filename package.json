@@ -7,7 +7,8 @@
     "node": "4.1.1"
   },
   "scripts": {
-    "start": "node ./server/server.js"
+    "start": "node ./server/server.js",
+    "test": "karma start karma.conf.js"
   },
   "repository": {
     "type": "git",
@@ -32,5 +33,11 @@
     "nodemon": "^1.9.2",
     "pokedex-promise-v2": "^2.1.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "jasmine-core": "^2.4.1",
+    "karma": "^1.1.1",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-requirejs": "^1.0.0"
+  }
 }
