@@ -1,4 +1,5 @@
 {
+  "cacheDirectories": ["node_modules", "bower_components"],
   "name": "jc_the_king_of_pokemon_masters",
   "version": "1.0.0",
   "description": "It's for the people who's interested in JC's pokemon collection list. The app would display a list with JC's each pokemon's name, numbers, locations",
