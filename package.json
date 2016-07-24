@@ -7,6 +7,7 @@
     "node": "4.1.1"
   },
   "scripts": {
+    "postinstall": "bower install",
     "start": "node ./server/server.js",
     "test": "karma start karma.conf.js"
   },
@@ -28,6 +29,7 @@
   "dependencies": {
     "bluebird": "^3.4.1",
     "body-parser": "^1.15.2",
+    "bower": "^1.7.9",
     "express": "^4.14.0",
     "mongoose": "^4.5.4",
     "nodemon": "^1.9.2",
