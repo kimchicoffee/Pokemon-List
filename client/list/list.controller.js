@@ -9,7 +9,18 @@ angular.module('app')
 
   $scope.addPokemon = function () {
     PokemonsFactory.addPokemon($scope.newPokemon)
-    .then(function () {
+    .then(function (data) {
+      if(data.status === 201) {
+        $scope.message = $scope.newPokemon.name+ " is succesfully added in your pokemon list!";
+      }
+      else if(data.status === 200) {
+        $scope.message = $scope.newPokemon.name+ " is already in your list!";
+      }
+      else if(data.status === 404) {
+        $scope.message = "Sorry, there is no such pokemon named "+$scope.newPokemon.name+" in pokedex!";
+      }else if(data.status === 500){
+        $scope.message = "Sorry, there is something wrong with the server";
+      }
       getAll();
     });
   };
@@ -36,13 +47,15 @@ angular.module('app')
   };
 
   var addPokemon = function (pokemon) {
-    console.log('pokemon is', pokemon);
+    //console.log('pokemon is', pokemon);
     return $http({
       method: 'POST',
       url: '/api/pokemons',
       data: pokemon
     })
     .then(function (resp) {
+      return resp;
+    }, function error(resp) {
       return resp;
     });
   };

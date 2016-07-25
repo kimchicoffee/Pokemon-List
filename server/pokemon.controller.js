@@ -18,24 +18,30 @@ module.exports.getOnePokemon = function (req, res) {
 
 module.exports.addPokemon = function (req, res) {
   var name = req.body.name.toLowerCase();
-  console.log('name is ', name);
   P.getPokemonByName(name)
   .then(function(pokemon) {
     console.log('pokemon is', pokemon);
     Pokemon.findOne({name:name}, function(err, result) {
-      if(!result) {
-
-        Pokemon({name:name, weight:pokemon.weight, height:pokemon.height, image:pokemon.sprites.front_default}).save(function(err,result) {
-          res.sendStatus(201);
-        })
-      }else{
+      if(err){
+        res.sendStatus(500);
+      }
+      if(result) {
         res.sendStatus(200);
+      }else{
+        Pokemon({name:name, weight:pokemon.weight, height:pokemon.height, image:pokemon.sprites.front_default}).save(function(err,result) {
+          if(err) {
+            res.sendStatus(500);
+          }else{
+            res.sendStatus(201);
+          }
+        })
       }
     });
   })
   .catch(function(error) {
     console.log('There was an ERROR: ', error);
-    res.sendStatus(404);
+    res.status(404);
+    res.send(error);
   });
 };
 
