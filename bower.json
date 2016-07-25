@@ -9,6 +9,10 @@
     "express",
     "pokemon"
   ],
+  "dependencies": {
+    "angular": ">=1.2.*",
+    "angular-ui-router": "~0.2.10"
+  },
   "homepage": "https://github.com/pasdesujin/jc_pokemon_king",
   "private": true,
   "ignore": [
