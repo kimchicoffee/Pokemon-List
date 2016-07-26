@@ -7,6 +7,13 @@ angular.module('app')
     });
   };
 
+  $scope.reverse = false;
+  $scope.propertyName = 'name';
+  $scope.sortBy = function(propertyName) {
+    $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : true;
+    $scope.propertyName = propertyName;
+  };
+
   $scope.addPokemon = function () {
     PokemonsFactory.addPokemon($scope.newPokemon)
     .then(function (data) {
@@ -19,7 +26,7 @@ angular.module('app')
       else if(data.status === 404) {
         $scope.message = "Sorry, there is no such pokemon named "+$scope.newPokemon.name+" in pokedex!";
       }else if(data.status === 500){
-        $scope.message = "Sorry, there is something wrong with the server";
+        $scope.message = "Sorry, there is something wrong with your request";
       }
       getAll();
     });
