@@ -1,10 +1,15 @@
 <form name="pokemonForm" ng-submit="addPokemon()" class="pokemon-form" novalidate>
-  <input type="text" ng-model="newPokemon.name" placeholder="Add your new pokemon's name here" required ng-class="{'error':pokemonForm.$invalid && pokemonForm.$dirty}" class="pokemon-form-input">
+  <div class="form-group">
+    <input type="text" ng-model="newPokemon.name" placeholder="Add your new pokemon's name here" required ng-class="{'error':pokemonForm.$invalid && pokemonForm.$dirty}" class="pokemon-form-input">
+  </div>
 </form>
-  <div>{{message}}</div>
-  <button ng-click="sortBy('name')">sort by name</button>
-  <button ng-click="sortBy('weight')">sort by weight</button>
-  <button ng-click="sortBy('created_at')">sort by time</button>
-<ul class="pokemonList">
-  <li ng-repeat="pokemon in pokemons | orderBy:propertyName:reverse"> <a ui-sref="pokemon({name:pokemon.name})">Name : {{pokemon.name}} Weight : {{pokemon.weight}} Height: {{pokemon.height}}</a> <i class="fa fa-trash-o" aria-hidden="true" ng-click="removePokemon(pokemons, $index)"></i></li>
+<div>{{message}}</div>
+<button ng-click="sortBy('name')" class="btn btn-default">sort by name</button>
+<button ng-click="sortBy('weight')" class="btn btn-default">sort by weight</button>
+<button ng-click="sortBy('created_at')" class="btn btn-default">sort by time</button>
+<ul class="list-group pokemonList">
+  <li ng-repeat="pokemon in pokemons | orderBy:propertyName:reverse" class="list-group-item">
+    <a ui-sref="pokemon({name:pokemon.name})">Name : {{pokemon.name}} Weight : {{pokemon.weight}} Height: {{pokemon.height}}</a>
+    <a ng-click="removePokemon(pokemons, $index)"><span class="fa fa-trash-o pull-right" aria-hidden="true" ></span></a>
+  </li>
 </ul>
