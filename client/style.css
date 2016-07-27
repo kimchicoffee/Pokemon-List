@@ -46,3 +46,11 @@ h1 {
   color: #ff0000;
   text-decoration: none;
 }
+.pokemonList > li > a > .fa-trash-o {
+  margin-top: 38px;
+  margin-right: 25px;
+}
+
+.buttons{
+  padding-left: 0;
+}

@@ -4,12 +4,15 @@
   </div>
 </form>
 <div>{{message}}</div>
-<button ng-click="sortBy('name')" class="btn btn-default">sort by name</button>
-<button ng-click="sortBy('weight')" class="btn btn-default">sort by weight</button>
-<button ng-click="sortBy('created_at')" class="btn btn-default">sort by time</button>
-<ul class="list-group pokemonList">
+<div class="col-md-offset-3 col-md-6 col-md-offset-right-3 buttons">
+  <button ng-click="sortBy('name')" class="btn btn-default"><i class="fa fa-tag" aria-hidden="true"></i> sort by name</button>
+  <button ng-click="sortBy('weight')" class="btn btn-default"><i class="fa fa-balance-scale" aria-hidden="true"></i> sort by weight</button>
+  <button ng-click="sortBy('created_at')" class="btn btn-default"><i class="fa fa-clock-o" aria-hidden="true"></i> sort by time</button>
+</div>
+
+<ul class="list-group pokemonList col-md-offset-3 col-md-6 col-md-offset-right-3">
   <li ng-repeat="pokemon in pokemons | orderBy:propertyName:reverse" class="list-group-item">
-    <a ui-sref="pokemon({name:pokemon.name})">Name : {{pokemon.name}} Weight : {{pokemon.weight}} Height: {{pokemon.height}}</a>
-    <a ng-click="removePokemon(pokemons, $index)"><span class="fa fa-trash-o pull-right" aria-hidden="true" ></span></a>
+    <a ui-sref="pokemon({name:pokemon.name})">Name : {{pokemon.name}} <img src="{{pokemon.image}}"> </a>
+    <a ng-click="removePokemon(pokemons, $index)"><span class="pull-right fa fa-trash-o fa-lg" aria-hidden="true"></span></a>
   </li>
 </ul>
