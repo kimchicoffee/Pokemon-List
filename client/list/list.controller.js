@@ -38,7 +38,12 @@ angular.module('app')
     .then(function () {
       getAll();
     });
-  }
+  };
+
+  $scope.starPokemon = function (pokemon) {
+    console.log('pokemon name is ', pokemon.name)
+    PokemonsFactory.starPokemon(pokemon);
+  };
 
   getAll();
 
@@ -78,9 +83,21 @@ angular.module('app')
     });
   };
 
+  var starPokemon = function (pokemon) {
+    return $http({
+      method: 'PUT',
+      url: '/api/pokemons/' + pokemon,
+      data: pokemon
+    })
+    .then(function (resp) {
+      return resp;
+    });
+  };
+
   return {
     getAll : getAll,
     addPokemon : addPokemon,
-    removePokemon : removePokemon
+    removePokemon : removePokemon,
+    starPokemon : starPokemon
   }
 });

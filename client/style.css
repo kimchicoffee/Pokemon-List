@@ -38,19 +38,27 @@ h1 {
   padding-top: 30px;
 }
 
-.pokemonList > li > a {
+.pokemonList  li  a {
   color: #454545;
   text-decoration: none;
 }
-.pokemonList > li > a:hover {
-  color: #ff0000;
+
+.pokemonList  > li > .edit-icons > a:hover {
   text-decoration: none;
 }
-.pokemonList > li > a > .fa-trash-o {
-  margin-top: 38px;
-  margin-right: 25px;
+.pokemonList  > li > .edit-icons > a.star:hover {
+  color: #ffff00;
 }
-
+.pokemonList  > li > .edit-icons > a.trash:hover {
+  color: #ff0000;
+}
+.star{
+  padding-right: 30px;
+}
+.edit-icons {
+  margin-top: 38px;
+  margin-right: 20px;
+}
 .buttons{
   padding-left: 0;
 }
