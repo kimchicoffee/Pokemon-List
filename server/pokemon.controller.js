@@ -16,6 +16,16 @@ module.exports.getOnePokemon = function (req, res) {
   });
 };
 
+module.exports.starPokemon = function (req, res) {
+  Pokemon.findOneAndUpdate({_id: req.body._id}, {$set:{star:!req.body.star}}, function(err,result){
+    if(err) {
+      console.log('err');
+    }
+    //resource updated successfully
+    res.sendStatus(204);
+  })
+};
+
 module.exports.addPokemon = function (req, res) {
   var name = req.body.name.toLowerCase();
   P.getPokemonByName(name)
@@ -28,7 +38,7 @@ module.exports.addPokemon = function (req, res) {
       if(result) {
         res.sendStatus(200);
       }else{
-        Pokemon({name:name, weight:pokemon.weight, height:pokemon.height, image:pokemon.sprites.front_default}).save(function(err,result) {
+        Pokemon({name:name, weight:pokemon.weight, height:pokemon.height, image:pokemon.sprites.front_default, star:false}).save(function(err,result) {
           if(err) {
             res.sendStatus(500);
           }else{

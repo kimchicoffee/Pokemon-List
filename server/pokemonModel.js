@@ -4,7 +4,8 @@ var pokemonSchema = new mongoose.Schema({
   name: String,
   weight: Number,
   height: Number,
-  image: String
+  image: String,
+  star: Boolean
 });
 
 module.exports = mongoose.model("Pokemon", pokemonSchema);

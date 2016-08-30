@@ -41,8 +41,10 @@ angular.module('app')
   };
 
   $scope.starPokemon = function (pokemon) {
-    console.log('pokemon name is ', pokemon.name)
-    PokemonsFactory.starPokemon(pokemon);
+    PokemonsFactory.starPokemon(pokemon)
+    .then(function (pokemon) {
+      getAll();
+    });
   };
 
   getAll();
@@ -86,7 +88,7 @@ angular.module('app')
   var starPokemon = function (pokemon) {
     return $http({
       method: 'PUT',
-      url: '/api/pokemons/' + pokemon,
+      url: '/api/pokemons/star',
       data: pokemon
     })
     .then(function (resp) {

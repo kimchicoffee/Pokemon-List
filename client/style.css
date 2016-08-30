@@ -43,22 +43,27 @@ h1 {
   text-decoration: none;
 }
 
+.pokemonList  > li > .edit-icons {
+  cursor: pointer;
+}
+
 .pokemonList  > li > .edit-icons > a:hover {
   text-decoration: none;
 }
-.pokemonList  > li > .edit-icons > a.star:hover {
-  color: #ffff00;
-}
+
 .pokemonList  > li > .edit-icons > a.trash:hover {
   color: #ff0000;
 }
+
 .star{
   padding-right: 30px;
 }
+
 .edit-icons {
   margin-top: 38px;
   margin-right: 20px;
 }
+
 .buttons{
   padding-left: 0;
 }
