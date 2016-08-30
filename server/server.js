@@ -21,7 +21,7 @@ app.get('/api/pokemons', pokemonCtrl.getAll);
 app.get('/api/pokemons/:name', pokemonCtrl.getOnePokemon);
 app.put('/api/pokemons/star', pokemonCtrl.starPokemon);
 app.post('/api/pokemons', pokemonCtrl.addPokemon);
-app.post('/api/pokemons/delete', pokemonCtrl.removePokemon);
+app.delete('/api/pokemons/:id', pokemonCtrl.removePokemon);
 
 app.listen(port, function (err) {
   if (err) {

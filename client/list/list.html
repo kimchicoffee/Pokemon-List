@@ -15,7 +15,7 @@
     <a ui-sref="pokemon({name:pokemon.name})">Name : {{pokemon.name}} <img src="{{pokemon.image}}"> </a>
     <div class="edit-icons pull-right">
       <a ng-click="starPokemon(pokemon)" class="star"><span class="fa" ng-class="{'fa-star': pokemon.star, 'fa-star-o': !pokemon.star}" aria-hidden="true"></span></a>
-      <a ng-click="removePokemon(pokemons, $index)" class="trash"><span class="fa fa-trash-o fa-lg" aria-hidden="true"></span></a>
+      <a ng-click="removePokemon(pokemon)" class="trash"><span class="fa fa-trash-o fa-lg" aria-hidden="true"></span></a>
     </div>
   </li>
 </ul>

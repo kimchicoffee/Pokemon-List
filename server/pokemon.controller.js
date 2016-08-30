@@ -56,7 +56,8 @@ module.exports.addPokemon = function (req, res) {
 };
 
 module.exports.removePokemon = function (req, res) {
-  Pokemon.remove({_id: req.body._id}, function(err) {
+  var id = req.params.id;
+  Pokemon.remove({_id: id}, function(err) {
     if (err) {
       console.error('error is', err);
       res.sendStatus(404);

@@ -32,9 +32,8 @@ angular.module('app')
     });
   };
 
-  $scope.removePokemon = function (pokemons,index) {
-    var deletedPokemon = pokemons.splice(index,1);
-    PokemonsFactory.removePokemon(deletedPokemon[0])
+  $scope.removePokemon = function (pokemon) {
+    PokemonsFactory.removePokemon(pokemon)
     .then(function () {
       getAll();
     });
@@ -76,8 +75,8 @@ angular.module('app')
 
   var removePokemon = function (pokemon) {
     return $http({
-      method: 'POST',
-      url: '/api/pokemons/delete',
+      method: 'DELETE',
+      url: '/api/pokemons/' + pokemon._id,
       data: pokemon
     })
     .then(function (resp) {
